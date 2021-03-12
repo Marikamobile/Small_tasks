@@ -1,0 +1,7 @@
+.pre-junior .junior .junior-plus{
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    font-size: 3em;
+    font-color: #fff;
+}

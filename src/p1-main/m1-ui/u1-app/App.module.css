@@ -1,3 +1,19 @@
-.App {
-
+*{
+margin: 0;
+padding: 0;
 }
+
+
+
+body{
+height: 100%;
+	background-repeat: no repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-image: url(https://i1.wp.com/ianacook.com/wp-content/uploads/2015/02/Nocturne.jpg?fit=4240%2C2384&ssl=1)
+	}
+
+
+
+

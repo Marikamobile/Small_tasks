@@ -1,18 +1,20 @@
 import React from 'react'
-import Header from './Header'
+import Header from './Header1'
 import Routes from './Routes'
-
-function HW5() {
+import { HashRouter } from 'react-router-dom'
+type HW5PropsType ={
+    className: string
+}
+function HW5(props: HW5PropsType) {
     return (
-        <div>
-            {/*в gh-pages лучше работает HashRouter*/}
-            {/*<HashRouter>*/}
+        <div className={props.className}>
+            <HashRouter>
 
             <Header/>
 
             <Routes/>
 
-            {/*</HashRouter>*/}
+            </HashRouter>
         </div>
     )
 }

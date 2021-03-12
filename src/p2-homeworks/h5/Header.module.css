@@ -1,0 +1,24 @@
+
+nav {
+list-style: none;
+max-width: 300px;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.5) ;
+  padding: 10px;
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  transform: translate(-50%, -50);
+
+}
+.item a {
+    color: white;
+    text-decoration: none;
+}
+.item a.active {
+    color: gold;
+}

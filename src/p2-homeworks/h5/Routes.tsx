@@ -23,9 +23,14 @@ function Routes() {
             {/*exact нужен чтоб указать полное совподение (что после '/' ничего не будет)*/}
             <Route path={'/'} exact render={() => <Redirect to={PATH.PRE_JUNIOR}/>}/>
 
-            <Route path={PATH.PRE_JUNIOR} render={() => <PreJunior/>}/>
-            <Route path={PATH.JUNIOR} render={() => <Junior/>}/>
-            <Route path={PATH.JUNIOR_PLUS} render={() => <JuniorPlus/>}/>
+            <Route path={PATH.PRE_JUNIOR}
+                   className='pre-junior'
+                   render={() => <PreJunior/>}/>
+            <Route path={PATH.JUNIOR}
+                   className='junior' render={() => <Junior/>}/>
+            <Route path={PATH.JUNIOR_PLUS}
+                   className='junior-plus'
+                   render={() => <JuniorPlus/>}/>
                 // add routes
 
             {/*у этого роута нет пути, он отрисуется если пользователь захочет попасть на несуществующую страницу*/}

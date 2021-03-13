@@ -1,0 +1,42 @@
+.content {
+    margin-top: 300px;
+    padding: 0;
+    font-family: Montserrat, sans-serif;
+    min-height: 100vh;
+    color: white;
+}
+
+.error-container {
+    background-image: linear-gradient(to right top, #021f4b, #152452, #23295a, #302f61, #3c3468, #3a396d, #393e71, #374375, #274875, #184c72, #0f506e, #115268);
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #343434;
+}
+
+.error-container h1 {
+    font-size: 200px;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 20px;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/6/62/Starsinthesky.jpg") center no-repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+a.error-text-navlink{
+    margin: 10px;
+    text-decoration: none;
+    background:  #3C4A7C;
+    color: #fff;
+    padding: 12px 24px;
+    display: inline-block;
+    border-radius: 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+a.error-text-navlink:hover{
+    background: #FFBD65;
+}

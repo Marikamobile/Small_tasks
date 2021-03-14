@@ -2,7 +2,10 @@ import React from 'react'
 
 function AlternativeSuperEditableSpan() {
     return (
-        <input/>
+        <div className="parent blue">
+            <div className="box coral" contentEditable>
+                :)
+            </div></div>
     )
 }
 

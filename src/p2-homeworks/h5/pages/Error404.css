@@ -19,9 +19,9 @@
 .error-container h1 {
     font-size: 200px;
     margin: 0;
-    font-weight: 700;
+    font-weight: bold;
     letter-spacing: 20px;
-    background: url("https://upload.wikimedia.org/wikipedia/commons/6/62/Starsinthesky.jpg") center no-repeat;
+    background: url("https://static.wixstatic.com/media/7e2dbe_65ff94f2f27b414d90c7f5fe05620d6f~mv2.gif") center no-repeat;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }

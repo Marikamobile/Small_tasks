@@ -1,11 +1,19 @@
-import React from "react";
-import Clock from "./Clock";
-
+import React from 'react'
+import Clock from './Clock'
+import {makeStyles, Typography} from "@material-ui/core";
+const useStyles = makeStyles( {
+    typography: {
+        color: 'white',
+        fontFamily: "Raleway Light",
+        textAlign: 'center'
+    }})
 function HW9() {
+    const classes = useStyles()
+
     return (
         <div>
-            <hr/>
-            homeworks 9
+            <hr/><Typography variant='h6' className={classes.typography}>HOMEWORK DATE-TIME</Typography>
+
 
             {/*should work (должно работать)*/}
             <Clock/>
@@ -15,7 +23,7 @@ function HW9() {
             {/*<AlternativeClock/>*/}
             <hr/>
         </div>
-    );
+    )
 }
 
-export default HW9;
+export default HW9

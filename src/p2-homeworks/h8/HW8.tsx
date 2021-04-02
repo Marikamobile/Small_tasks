@@ -1,46 +1,100 @@
-import React, {useState} from "react";
-import {homeWorkReducer} from "./bll/homeWorkReducer";
-import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
+import React, {useState} from 'react'
+import {checkAC, homeWorkReducer, sortAC} from './bll/homeWorkReducer'
+import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import {Card, CardContent, makeStyles, Typography} from "@material-ui/core";
 
-const initialPeople = [
-    {_id: 0, name: "Кот", age: 3},
-    {_id: 1, name: "Александр", age: 66},
-    {_id: 2, name: "Коля", age: 16},
-    {_id: 3, name: "Виктор", age: 44},
-    {_id: 4, name: "Дмитрий", age: 40},
-    {_id: 5, name: "Ирина", age: 55},
+export type UserType = {
+    _id: number
+    name: string
+    age: number
+}
+
+const initialPeople: UserType[] = [
+    {_id: 0, name: 'Кот', age: 3},
+    {_id: 1, name: 'Александр', age: 66},
+    {_id: 2, name: 'Коля', age: 16},
+    {_id: 3, name: 'Виктор', age: 44},
+    {_id: 4, name: 'Дмитрий', age: 40},
+    {_id: 5, name: 'Ирина', age: 55},
 ]
+const useStyles = makeStyles(theme => ({
+
+    card: {
+        backgroundImage: 'linear-gradient(45deg, rgba(254, 107, 139, 0.8), rgba(255, 142, 83, 0.8))',
+        width: '400px',
+        margin: 'auto',
+    },
+    cardContent: {
+        textAlign: "center",
+        margin: 'auto',
+
+    },
+    container: {
+        margin: 'auto',
+
+    },
+    buttons: {
+        textAlign: "center",
+        margin: 'auto',
+    },
+
+    button: {
+        width: '80px',
+        fontSize: '10px'
+    },
+    typography: {
+        color: 'white',
+        fontFamily: 'montserrat',
+        marginLeft: "10px",
+        marginTop: '-20px'
+    },
+    typographyH5: {
+        color: 'white',
+        fontFamily: 'Raleway Light',
+        textAlign: 'center',
+        marginBottom: '10px'
+    }
+}))
 
 function HW8() {
-    const [people, setPeople] = useState(initialPeople);
+    const classes = useStyles()
+    const [people, setPeople] = useState<UserType[]>(initialPeople) // need to fix any
 
-    const finalPeople = people.map(p => (
+
+    const finalPeople = people.map((p: UserType) => (
         <div key={p._id}>
-            some name, age
+            {`${p.name} - ${p.age} по паспорту`}
         </div>
     ))
 
-    const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: "sort", payload: "up"}))
+    const sortUp = () => setPeople(homeWorkReducer(people, sortAC('up')))
+    const sortDown = () => setPeople(homeWorkReducer(people, sortAC('down')))
+    const check18 = () => setPeople(homeWorkReducer(people, checkAC(18)))
 
     return (
-        <div>
+        <div className={classes.container}>
             <hr/>
-            homeworks 8
+            <Typography variant={"h5"} className={classes.typographyH5}> HOMEWORK 8</Typography>
 
-            {/*should work (должно работать)*/}
+            <Card className={classes.card}>
+                <CardContent className={classes.cardContent}>
+                </CardContent>
+                <Typography variant={"h6"} className={classes.typography}> {finalPeople}</Typography>
 
-            {finalPeople}
-            <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
-            <div>sort down</div>
+            </Card>
+            <div className={classes.buttons}>
+                <SuperButton onClick={sortUp} className={classes.button}>sort up</SuperButton>
+                <SuperButton onClick={sortDown} className={classes.button}>sort down</SuperButton>
+                <SuperButton onClick={check18} className={classes.button}>check 18</SuperButton>
+            </div>
 
-            check 18
 
             <hr/>
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativePeople/>*/}
             <hr/>
         </div>
-    );
+    )
 }
 
-export default HW8;
+export default HW8

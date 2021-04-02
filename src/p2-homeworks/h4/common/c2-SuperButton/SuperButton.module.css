@@ -13,6 +13,11 @@
 .default:hover{
 background: #FFBD65;
 }
+button,
+button:active,
+button:focus {
+    outline: none;
+}
 .red {
     background: red;
 }
